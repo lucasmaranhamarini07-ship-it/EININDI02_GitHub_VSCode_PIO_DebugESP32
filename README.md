@@ -13,7 +13,7 @@
   - [Software](#software)
   - [Hardware](#hardware)
 
-- [⬇️ Baixando](#baixando)
+- [⬇️ Baixando o pacote ININDUFU](#baixando)
   - [Passo 1 – Acessar o link do instalador da disciplina](#baixando-passo-1)
   - [Passo 2 – Iniciar o download do arquivo no navegador](#baixando-passo-2)
   - [Passo 3 – Escolher salvar o instalador](#baixando-passo-3)
@@ -22,7 +22,7 @@
   - [Passo 6 – Selecionar a opção para manter o arquivo](#baixando-passo-6)
   - [Passo 7 – Confirmar que deseja manter o instalador](#baixando-passo-7)
 
-- [🖥️ Computador](#computador)
+- [🖥️ Instalando o pacote ININDUFU](#computador)
   - [Passo 1 – Localizar o instalador do pacote ININDUFU](#computador-passo-1)
   - [Passo 2 – Abrir os detalhes do alerta do Windows](#computador-passo-2)
   - [Passo 3 – Executar o instalador mesmo assim](#computador-passo-3)
@@ -33,7 +33,7 @@
   - [Passo 8 – Concluir a instalação do pacote](#computador-passo-8)
   - [Passo 9 – Encerrar a tela final do instalador](#computador-passo-9)
 
-- [🐍 Python](#python)
+- [🐍 Instalando o python](#python)
   - [Passo 1 – Selecionar a instalação personalizada e habilitar o PATH](#python-passo-1)
   - [Passo 2 – Confirmar os recursos opcionais](#python-passo-2)
   - [Passo 3 – Ajustar as opções avançadas](#python-passo-3)
@@ -41,7 +41,7 @@
   - [Passo 5 – Finalizar o assistente do Python](#python-passo-5)
   - [Passo 6 – Validar a instalação no Prompt de Comando](#python-passo-6)
 
-- [🌿 Git](#git)
+- [🌿 Instalando o git](#git)
   - [Passo 1 – Avançar pela tela inicial do instalador](#git-passo-1)
   - [Passo 2 – Definir a pasta de instalação do Git](#git-passo-2)
   - [Passo 3 – Conferir os componentes adicionais](#git-passo-3)
@@ -59,7 +59,7 @@
   - [Passo 15 – Revisar as opções experimentais](#git-passo-15)
   - [Passo 16 – Finalizar a instalação do Git](#git-passo-16)
 
-- [🔌 com0com](#com0com)
+- [🔌 Instalando o com0com](#com0com)
   - [Passo 1 – Iniciar o assistente do com0com](#com0com-passo-1)
   - [Passo 2 – Aceitar o contrato de licença](#com0com-passo-2)
   - [Passo 3 – Confirmar os componentes da instalação](#com0com-passo-3)
@@ -68,7 +68,7 @@
   - [Passo 6 – Aguardar a cópia dos arquivos](#com0com-passo-6)
   - [Passo 7 – Encerrar o assistente do com0com](#com0com-passo-7)
 
-- [💻 VSCode](#vscode)
+- [💻 Instalando o VSCode](#vscode)
   - [Passo 1 – Escolher o modo de instalação do VS Code](#vscode-passo-1)
   - [Passo 2 – Confirmar o aviso do instalador](#vscode-passo-2)
   - [Passo 3 – Aceitar o contrato de licença](#vscode-passo-3)
@@ -77,7 +77,7 @@
   - [Passo 6 – Concluir a instalação do editor](#vscode-passo-6)
   - [Passo 7 – Fechar o prompt do instalador](#vscode-passo-7)
 
-- [🛠️ PlatformIO](#platformio)
+- [🛠️ Configurando o platformio no VSCode](#platformio)
   - [Passo 1 – Abrir a área de extensões do VS Code](#platformio-passo-1)
   - [Passo 2 – Instalar a extensão PlatformIO IDE](#platformio-passo-2)
   - [Passo 3 – Confirmar a extensão carregada no VS Code](#platformio-passo-3)
@@ -86,7 +86,7 @@
   - [Passo 6 – Aguardar a geração da estrutura PlatformIO](#platformio-passo-6)
   - [Passo 7 – Conferir os arquivos do projeto criado](#platformio-passo-7)
 
-- [☁️ GitHub](#github)
+- [☁️ Fazendo uma publicação do VSCode no github](#github)
   - [Passo 1 – Iniciar a publicação do projeto no GitHub](#github-passo-1)
   - [Passo 2 – Autorizar o acesso à conta GitHub](#github-passo-2)
   - [Passo 3 – Definir o nome e a visibilidade do repositório](#github-passo-3)
