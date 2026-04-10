@@ -1141,11 +1141,11 @@ Baixe e instale o VS Code conforme o vídeo abaixo:
 
 [env:esp32s3]
 platform = espressif32
-framework = arduino
 board = esp32-s3-devkitc-1
-
-upload_protocol = esp-builtin
+framework = arduino
+upload_protocol = esptool
 monitor_speed = 115200
+build_flags = -DARDUINO_USB_CDC_ON_BOOT=1 -DARDUINO_USB_MODE=1
 
 lib_deps = 
 
@@ -1160,42 +1160,38 @@ build_src_filter = +<main.cpp>
 ```cpp
 
 #include <Arduino.h>
-#include <esp32-hal-rgb-led.h>
 
-constexpr uint8_t LED_PIN = 23;
-const uint8_t COLORS[][3] = {
-    {32, 0, 0}, {0, 32, 0}, {0, 0, 32},
-    {32, 32, 0}, {0, 32, 32}, {32, 0, 32},
-};
-constexpr size_t NUM_COLORS = sizeof(COLORS) / sizeof(COLORS[0]);
+// Teste minimo: pisca LED RGB no pino 48 (ESP32-S3-DevKitC-1)
+#define RGB_PIN 48
 
 void setup()
 {
-  pinMode(LED_PIN, OUTPUT);
-  neopixelWrite(RGB_BUILTIN, COLORS[0][0], COLORS[0][1], COLORS[0][2]);
+  Serial.begin(115200);
+  delay(2000);  // espera USB reconectar apos reset
+  Serial.println("=== ESP32-S3 Teste Minimo ===");
 }
 
 void loop()
 {
-  uint32_t now = millis();
+  // Vermelho
+  neopixelWrite(RGB_PIN, 255, 0, 0);
+  Serial.println("VERMELHO");
+  delay(500);
 
-  constexpr uint32_t BLINK_MS = 1000;
-  static uint32_t prevBlink = 0;
-  static bool ledState = false;
-  if (now - prevBlink >= BLINK_MS) {
-    prevBlink = now;
-    ledState = !ledState;
-    digitalWrite(LED_PIN, ledState);
-  }
+  // Apagado
+  neopixelWrite(RGB_PIN, 0, 0, 0);
+  Serial.println("APAGADO");
+  delay(500);
 
-  constexpr uint32_t COLOR_MS = 1000;
-  static uint32_t prevColor = 0;
-  static size_t colorIdx = 0;  
-  if (now - prevColor >= COLOR_MS) {
-    prevColor = now;
-    colorIdx = (colorIdx + 1) % NUM_COLORS;
-    neopixelWrite(RGB_BUILTIN, COLORS[colorIdx][0], COLORS[colorIdx][1], COLORS[colorIdx][2]);
-  }
+  // Verde
+  neopixelWrite(RGB_PIN, 0, 255, 0);
+  Serial.println("VERDE");
+  delay(500);
+
+  // Apagado
+  neopixelWrite(RGB_PIN, 0, 0, 0);
+  Serial.println("APAGADO");
+  delay(500);
 }
 
 ```
