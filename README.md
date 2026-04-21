@@ -109,13 +109,20 @@
   - [Passo 3 – Aguardar a geração da estrutura PlatformIO](#new-platformio-passo-3)
   - [Passo 4 – Conferir os arquivos do projeto criado](#new-platformio-passo-4)
 
-- [☁️ Fazendo uma publicação do VSCode no github](#github)
-  - [Passo 1 – Iniciar a publicação do projeto no GitHub](#github-passo-1)
-  - [Passo 2 – Autorizar o acesso à conta GitHub](#github-passo-2)
-  - [Passo 3 – Definir o nome e a visibilidade do repositório](#github-passo-3)
-  - [Passo 4 – Conferir os arquivos preparados para versionamento](#github-passo-4)
-  - [Passo 5 – Criar o primeiro commit e configurar a identidade Git](#github-passo-5)
-  - [Passo 6 – Validar a publicação no GitHub](#github-passo-6)
+- [☁️ Fazendo uma publicação do VSCode no GitHub](#github)
+  - [Passo 1 – Iniciar login pela extensão](#github-passo-1a)
+  - [Passo 2 – Autorizar acesso ao GitHub](#github-passo-1b)
+  - [Passo 3 – Selecionar conta do GitHub](#github-passo-1c)
+  - [Passo 4 – Fazer login no GitHub](#github-passo-1d)
+  - [Passo 5 – Informar nome do aluno](#github-passo-1e)
+  - [Passo 6 – Informar e-mail do aluno](#github-passo-1f)
+  - [Passo 7 – Confirmar sessão ativa](#github-passo-1g)
+  - [Passo 8 – Publicar projeto no GitHub](#github-passo-1)
+  - [Passo 9 – Autorizar acesso à conta GitHub](#github-passo-2)
+  - [Passo 10 – Definir nome e visibilidade do repositório](#github-passo-3)
+  - [Passo 11 – Conferir arquivos para versionamento](#github-passo-4)
+  - [Passo 12 – Configurar identidade Git (sem extensão)](#github-passo-5a)
+  - [Passo 13 – Validar publicação no GitHub](#github-passo-6)
 
 - [📝 Boas práticas para mensagens de commit](#boas-praticas-para-mensagens-de-commit)
 - [📊 Tratamento e análise](#tratamento-e-analise)
@@ -1147,10 +1154,14 @@ framework = arduino
 monitor_speed = 115200
 upload_protocol = esptool
 debug_tool = esp-builtin
+debug_speed = 12000
+debug_init_break = tbreak setup
 
+build_type = debug
 build_flags =
     -D ARDUINO_USB_MODE=1
-    -D ARDUINO_USB_CDC_ON_BOOT=1
+    -D ARDUINO_USB_CDC_ON_BOOT=0
+    -O0 -ggdb3
 build_src_filter = +<main.cpp>
 lib_deps = 
 
@@ -1220,8 +1231,85 @@ Veja o vídeo abaixo sobre a criação e o teste inicial do projeto:
 <details close>
   <summary><strong> ☁️ Fazendo uma publicação do VSCode no github </strong></summary>
 
+<a id="github-passo-1a"></a>
+### 🔹 Passo 1 – Iniciar login pela extensão na barra de status
+![fig1a](assets/7.github/fig01a.png)
+
+1. Abra o projeto no **VS Code**.
+2. Na **barra de status inferior**, localize o ícone da extensão **LasecGitSession**.
+3. Clique no ícone da extensão para iniciar o processo de autenticação no GitHub.
+
+💡 *Esse botão inicia a configuração da sessão GitHub diretamente pela extensão.*
+
+---
+
+<a id="github-passo-1b"></a>
+### 🔹 Passo 2 – Autorizar acesso ao GitHub
+![fig1b](assets/7.github/fig01b.png)
+
+1. Uma janela será exibida solicitando autorização para a extensão.
+2. Clique em **Permitir** para continuar.
+
+💡 *Essa permissão autoriza a extensão a acessar sua conta GitHub no VS Code.*
+
+---
+
+<a id="github-passo-1c"></a>
+### 🔹 Passo 3 – Selecionar a conta do GitHub
+![fig1c](assets/7.github/fig01c.png)
+
+1. Selecione a conta GitHub que será usada pela extensão.
+2. Clique sobre o usuário listado.
+
+💡 *Se necessário, escolha a opção **Entrar com outra conta**.*
+
+---
+
+<a id="github-passo-1d"></a>
+### 🔹 Passo 4 – Fazer login no GitHub
+![fig1d](assets/7.github/fig01d.png)
+
+1. Informe seu **usuário ou e-mail** do GitHub.
+2. Digite sua **senha**.
+3. Clique em **Sign in**.
+
+💡 *Também é possível entrar usando passkey, Google ou Apple, se essas opções estiverem disponíveis.*
+
+---
+
+<a id="github-passo-1e"></a>
+### 🔹 Passo 5 – Informar o nome do aluno
+![fig1e](assets/7.github/fig01e.png)
+
+1. Digite o **nome completo do aluno**.
+2. Pressione **Enter** para confirmar.
+
+💡 *Esse nome será utilizado nos commits realizados nesta máquina.*
+
+---
+
+<a id="github-passo-1f"></a>
+### 🔹 Passo 6 – Informar o e-mail do aluno
+![fig1f](assets/7.github/fig01f.png)
+
+1. Digite o **e-mail do aluno**.
+2. Pressione **Enter** para confirmar.
+
+💡 *Esse e-mail será associado aos commits realizados nesta máquina.*
+
+---
+
+<a id="github-passo-1g"></a>
+### 🔹 Passo 7 – Confirmar sessão ativa
+![fig1g](assets/7.github/fig01g.png)
+
+1. Verifique a mensagem exibida no VS Code informando que a **LasecGitSession** está ativa.
+2. Após isso, a máquina estará pronta para realizar commits com a identificação configurada.
+
+💡 *Quando essa mensagem aparecer, a autenticação e a configuração da sessão foram concluídas com sucesso.*
+
 <a id="github-passo-1"></a>
-### 🔹 Passo 1 – Iniciar a publicação do projeto no GitHub
+### 🔹 Passo 8 – Iniciar a publicação do projeto no GitHub
 ![fig1](assets/7.github/fig01.png)
 
 1. Abra o projeto no **VS Code**.
@@ -1233,7 +1321,7 @@ Veja o vídeo abaixo sobre a criação e o teste inicial do projeto:
 ---
 
 <a id="github-passo-2"></a>
-### 🔹 Passo 2 – Autorizar o acesso à conta GitHub
+### 🔹 Passo 9 – Autorizar o acesso à conta GitHub
 ![fig2](assets/7.github/fig02.png)
 
 1. Quando o VS Code solicitar autenticação, escolha a opção de login no GitHub.
@@ -1245,7 +1333,7 @@ Veja o vídeo abaixo sobre a criação e o teste inicial do projeto:
 ---
 
 <a id="github-passo-3"></a>
-### 🔹 Passo 3 – Definir o nome e a visibilidade do repositório
+### 🔹 Passo 10 – Definir o nome e a visibilidade do repositório
 ![fig3](assets/7.github/fig03.png)
 
 1. Escolha o nome do repositório que será criado.
@@ -1255,7 +1343,7 @@ Veja o vídeo abaixo sobre a criação e o teste inicial do projeto:
 ---
 
 <a id="github-passo-4"></a>
-### 🔹 Passo 4 – Conferir os arquivos preparados para versionamento
+### 🔹 Passo 11 – Conferir os arquivos preparados para versionamento
 ![fig4](assets/7.github/fig04.png)
 
 1. Observe a lista de arquivos exibida na área de controle de código.
@@ -1264,11 +1352,11 @@ Veja o vídeo abaixo sobre a criação e o teste inicial do projeto:
 
 ---
 
-<a id="github-passo-5"></a>
-### 🔹 Passo 5 – Criar o primeiro commit e configurar a identidade Git
+<a id="github-passo-5a"></a>
+### 🔹 Passo 12 – Faça isso apenas se vc não tiver a extensão **LasecGitSession**
 ![fig5](assets/7.github/fig05.png)
 
-1. Se necessário, abra o terminal integrado do VS Code.
+1. Se a extensão **LasecGitSession** não estiver instalada, abra o terminal integrado do VS Code.
 2. Configure sua identidade:
 
 ```bash
@@ -1276,19 +1364,20 @@ git config --global user.name "Seu Nome"
 git config --global user.email "seu@email.com"
 ```
 3. Escreva a mensagem do commit inicial e clique em **Commit**.
-
-⚠️ *Sem `user.name` e `user.email`, o Git pode bloquear a criação do commit.*
-
-4. Para limpar suas credenciais do GitHub, utilize:
+4. Quando for sair da maquina, você deve limpar suas credenciais do GitHub. Para isso, utilize:
 
 ```bash
 git config --global --unset user.name
 git config --global --unset user.email
-``` 
+```
+⚠️ *Sem `user.name` e `user.email`, o Git bloqueia a criação do commit.*
+⚠️ *ESTE PASSO É OBRIGATÓRIO SOMENTE PARA QUEM NÃO TEM A EXTENSÃO LasecGitSession INSTALADA.*
+⚠️ *ELA REALIZA ESSA CONFIGURAÇÃO DE FORMA AUTOMÁTICA.*
+
 ---
 
 <a id="github-passo-6"></a>
-### 🔹 Passo 6 – Validar a publicação no GitHub
+### 🔹 Passo 13 – Validar a publicação no GitHub
 ![fig6](assets/7.github/fig06.png)
 
 1. Abra o GitHub no navegador após a publicação.
@@ -1391,10 +1480,9 @@ Mantenha essas práticas em mente ao trabalhar com o Git, e você verá que ser�
 <details close>
   <summary><strong> 🧪 Tarefa a ser executada </strong></summary>
 
-- Faça um LED piscar.
-- A comunicação serial não pode parar.
-- Use o SimulIDE para testar seu código.
-- Não use `delay()` no `loop`.
+- Crie um novo arquivo na pasta `src` do projeto PlatformIO.
+- Implemente um código que utilize a função `millis()` para alternar o estado de um LED a cada 500ms.
+- Ou seja, remova o uso de `delay()` no `loop`.
 
 </details>
 
